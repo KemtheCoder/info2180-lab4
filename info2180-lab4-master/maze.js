@@ -1,8 +1,21 @@
-function end(){
-  var end = document.getElementById("end");
-  end.style.color = 'red';
+var loser = false;
+
+window.onload = function(){
+  $("start").onclick = startClick;
+  $("end").onmouseover = overEnd;
+  var boundaries = $$("div#maze div.boundary");
+  for (var i = 0; i<boundaries.length; i++){
+    boundaries[i].onmouseover = overBoundary;
+  }
 }
 
+function overBoundary(){
+  loser = true;
+  $("status").textContent = "You lose!";
+  var boundaries = $$("div#maze div.boundary");
+  for (var i = 0; i < boundaries.length; i++){
+    boundaries[i].addClassName("youlose");
+    }
+}
+    
 
-var end = document.getElementById("end");
-end.onmouseover()
