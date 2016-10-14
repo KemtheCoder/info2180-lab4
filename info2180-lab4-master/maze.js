@@ -17,5 +17,14 @@ function overBoundary(){
     boundaries[i].addClassName("youlose");
     }
 }
+
+function startClick(){
+  loser = false;
+  $("status").textContent = "Find the end!";
+  var boundaries = $$("div#maze div.boundary");
+  for (var i = 0; i < boundaries.length; i++){
+    boundaries[i].removeClassName("youlose");
+  }
+}
     
 
